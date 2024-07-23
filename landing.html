@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body class="bg-gray-100">
+    <header
+      class="bg-blue-600 text-white p-4 flex justify-between items-center fixed z-20 w-full"
+    >
+      <img src="./imgs/Logo.png" alt="" />
+      <div class="flex gap-5">
+        <button
+          onclick="toggleBasket()"
+          class="bg-green-600 text-white px-4 py-2 rounded"
+        >
+          View Basket
+        </button>
+        <button
+          onclick="logout()"
+          class="bg-red-500 text-white px-4 py-2 rounded"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <main class="p-4 pt-16 relative top-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Product 1 -->
+        <div class="bg-white p-4 shadow-lg flex flex-col gap-6 max-h-[450px]">
+          <img
+            src="./imgs/team-4.png"
+            alt="Product 1"
+            class="w-full h-2/5 object-fill mb-4"
+          />
+          <h2 class="text-xl font-bold">Product 1</h2>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            maiores.
+          </p>
+          <p class="text-gray-900 font-bold">$10.00</p>
+          <button
+            onclick="addToBasket('Product 1', 10)"
+            class="mt-2 bg-blue-600 text-white px-4 py-2"
+          >
+            Add to Basket
+          </button>
+        </div>
+        <!-- Product 2 -->
+
+        <div class="bg-white p-4 shadow-lg flex flex-col gap-6 max-h-[450px]">
+          <img
+            src="./imgs/team-3.png"
+            alt="Product 2"
+            class="w-full h-2/5 object-fill mb-4"
+          />
+          <h2 class="text-xl font-bold">Product 2</h2>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Dignissimos, consequuntur.
+          </p>
+          <p class="text-gray-900 font-bold">$20.00</p>
+          <button
+            onclick="addToBasket('Product 2', 20)"
+            class="mt-2 bg-blue-600 text-white px-4 py-2"
+          >
+            Add to Basket
+          </button>
+        </div>
+        <!-- Product 3 -->
+        <div class="bg-white p-4 shadow-lg flex flex-col gap-6 max-h-[450px]">
+          <img
+            src="./imgs/team-2.png"
+            alt="Product 3"
+            class="w-full h-2/5 object-fill mb-4"
+          />
+          <h2 class="text-xl font-bold">Product 3</h2>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit cupiditate
+            sequi!
+          </p>
+          <p class="text-gray-900 font-bold">$30.00</p>
+          <button
+            onclick="addToBasket('Product 3', 30)"
+            class="mt-2 bg-blue-600 text-white px-4 py-2"
+          >
+            Add to Basket
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <aside
+      id="basket"
+      class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 p-4"
+    >
+      <h2 class="text-xl font-bold">Basket</h2>
+      <ul id="basket-items" class="list-disc pl-4"></ul>
+      <p class="text-xl font-bold">
+        Total: $<span id="total-price">0.00</span>
+      </p>
+      <button
+        onclick="toggleBasket()"
+        class="mt-4 bg-red-600 text-white px-4 py-2"
+      >
+        Close
+      </button>
+    </aside>
+    <div
+      id="notification"
+      class="fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-opacity duration-300 ease-in-out"
+    >
+      Item added to basket
+    </div>
+    <script src="../js/landing.js"></script>
+  </body>
+</html>

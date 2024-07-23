@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e-commerse</title>
+    <!-- font aweasome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header class="fixed z-30 w-full bg-slate-800">
+      <div
+        class="container relative flex justify-between items-center h-[75px]"
+      >
+        <img src="./imgs/Logo.png" alt="" />
+        <div class="flex space-x-10 items-center text-white">
+          <i
+            id="open-menu"
+            class="fa-solid fa-bars text-2xl md:hidden cursor-pointer"
+          ></i>
+          <ul
+            id="menu"
+            class="bg-[#152237db] md:flex hidden flex-col md:flex-row md:static md:bg-transparent absolute top-full w-full -left-10 md:space-x-9 space-y-2 items-center text-indigo-300 md:text-white divide-y divide-gray-900 radial-gradient text-center md:hover:divide-slate-700 md:divide-slate-800"
+          >
+            <li class="text-cyan-300 w-full mt-2 p-4"><a href="#">Home</a></li>
+            <li
+              class="hover:text-cyan-300 w-full p-2 hover:p-4 transition-all md:hover:p-2"
+            >
+              <a onclick="auth()" id="landing">Products</a>
+            </li>
+            <li
+              class="hover:text-cyan-300 w-full p-2 hover:p-4 transition-all md:hover:p-2"
+            >
+              <a href="#">Protfolio</a>
+            </li>
+            <li
+              class="hover:text-cyan-300 w-full p-2 hover:p-4 transition-all md:hover:p-2"
+            >
+              <a href="#">About</a>
+            </li>
+          </ul>
+
+          <div class="relative flex items-center text-cyan-300">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span
+              class="inline-block bg-cyan-300 relative top[-3px] w-[2px] h-8 right-8"
+            ></span>
+          </div>
+          <a href="index.html" class="btn hidden md:block">Login</a>
+        </div>
+      </div>
+    </header>
+    <main class="flex items-center justify-center min-h-screen bg-gray-100">
+      <form
+        id="signupForm"
+        onsubmit="handleFormSubmit(event)"
+        action="#"
+        class="relative flex flex-col mt-20 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0"
+      >
+        <div class="flex flex-col justify-center p-8 md:p-14">
+          <h2 class="mb-3 text-4xl font-bold">Welcome in VivaDecor</h2>
+          <h3 class="font-light text-gray-400 mb-8">
+            Please enter your details
+          </h3>
+          <div class="py-4">
+            <span class="mb-2 text-md">Email</span>
+            <input
+              required
+              type="email"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              name="email"
+              id="email"
+            />
+          </div>
+          <div class="py-4">
+            <span class="mb-2 text-md">Password</span>
+            <input
+              required
+              type="password"
+              name="pass"
+              id="pass"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+            />
+          </div>
+          <button
+            class="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </main>
+    <script src="../js/signup.js"></script>
+  </body>
+</html>
